@@ -29,12 +29,12 @@ exports.createPost = (req, res) => {
 
 }
 
-exports.deletePost = (res,req) => {
+exports.deletePost = (req,res) => {
     console.log("TESTING : ", req.params);
     const post = Post.deleteOne({_id:req.params.id}).then(result => {
         res.status(200).json({
             post :result
-        }).catch((err) => console.log(err))
-    })
+        })
+    }).catch((err) => console.log(err))
 }
 
